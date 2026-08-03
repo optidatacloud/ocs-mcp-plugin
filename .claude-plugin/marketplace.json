@@ -3,6 +3,7 @@
     "owner": {
         "name": "Optidata Cloud"
     },
+    "description": "Official Optidata Cloud plugins: manage your cloud infrastructure — compute, storage, networking, DNS and object storage — from your AI client.",
     "plugins": [
         {
             "name": "optidata-cloud",

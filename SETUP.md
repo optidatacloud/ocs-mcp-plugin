@@ -1,9 +1,8 @@
 # Optidata Cloud — setup
 
 Manage your Optidata Cloud infrastructure from your AI client in plain language:
-list, create, resize and delete compute, block storage, networking and DNS, all by
-name. Buckets are not exposed yet — create and list them in the portal (see
-`CHANGELOG.md`).
+list, create, resize and delete compute, block storage, networking, DNS and object
+storage buckets, all by name.
 
 The MCP server is **hosted** at `https://console.optidata.com/api/v1/mcp`. There
 is nothing to install and nothing to run: no Node, no package, no local process.
@@ -43,11 +42,8 @@ connected, then ask:
 If it does not appear in `/mcp` at all, run `/plugin manage` and check the plugin
 is enabled.
 
-> ⚠️ **NOT VERIFIED.** The install above depends on Claude Code expanding
-> `${user_config.ocs_api_key}` inside `headers` and `${OCS_MCP_URL:-...}` inside
-> `url` in the plugin's `.mcp.json`. Neither has been confirmed end to end. If
-> `/mcp` shows `ocs` as failing to connect, use the plain-server command below —
-> it takes the key literally and does not depend on either expansion.
+If `/mcp` shows `ocs` as failing to connect, the same endpoint also works as a plain
+MCP server, taking the key literally:
 
 Prefer not to use the plugin, or hit the caveat above? The same endpoint works as
 a plain MCP server:
@@ -117,8 +113,8 @@ example after rotating it in the portal.
 - Deleting, stopping or rebooting shows what is affected and asks you to type the
   resource's exact name first.
 - Tools that would put a secret in the conversation (a VM's root password, a
-  console URL, a generated private key) are **off by default on the server** and
-  cannot be switched on from your side.
+  console URL, a generated private key) are controlled **on the server** and cannot
+  be switched on from your side. If you do not see them, that is why.
 
 Both confirmation steps are enforced by the server, so they hold for every
 client, not just Claude Code.
