@@ -1,0 +1,13 @@
+{
+    "name": "optidata",
+    "owner": {
+        "name": "Optidata Cloud"
+    },
+    "plugins": [
+        {
+            "name": "optidata-cloud",
+            "source": "./",
+            "description": "Connect to the hosted Optidata Cloud MCP server: query and provision compute, network, storage, DNS, projects and catalog through the Optidata Cloud public API (/api/v1), with itemized cost preview and safe destructive confirmations."
+        }
+    ]
+}

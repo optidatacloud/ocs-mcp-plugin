@@ -1,0 +1,26 @@
+{
+    "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+    "name": "cloud.optidata/ocs-mcp-server",
+    "title": "Optidata Cloud MCP Server",
+    "description": "Query and provision Optidata Cloud compute, network, storage, DNS, projects and catalog.",
+    "version": "1.0.1",
+    "websiteUrl": "https://github.com/optidatacloud/ocs-mcp-plugin",
+    "repository": {
+        "url": "https://github.com/optidatacloud/ocs-mcp-plugin",
+        "source": "github"
+    },
+    "remotes": [
+        {
+            "type": "streamable-http",
+            "url": "https://console.optidata.com/api/v1/mcp",
+            "headers": [
+                {
+                    "name": "x-api-key",
+                    "description": "Optidata Cloud API key, created in the portal under your account's API keys.",
+                    "isRequired": true,
+                    "isSecret": true
+                }
+            ]
+        }
+    ]
+}

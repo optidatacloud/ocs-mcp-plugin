@@ -1,0 +1,13 @@
+# This repo is packaging only: manifests, skill and docs. Nothing is built here,
+# so there are no build outputs to ignore.
+
+# Secrets — never commit a key
+.env
+*.pem
+
+# Editor / OS noise
+.idea/
+.claude/
+.DS_Store
+Thumbs.db
+*.swp

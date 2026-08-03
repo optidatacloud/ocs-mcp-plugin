@@ -1,0 +1,15 @@
+{
+    "name": "optidata-cloud",
+    "displayName": "Optidata Cloud",
+    "description": "Optidata Cloud plugin for Cursor: MCP tools and skills for compute, network, storage, DNS, projects and catalog, backed by the hosted Optidata Cloud MCP server.",
+    "version": "1.0.1",
+    "author": {
+        "name": "Optidata Cloud",
+        "url": "https://console.optidata.com"
+    },
+    "homepage": "https://github.com/optidatacloud/ocs-mcp-plugin",
+    "repository": "https://github.com/optidatacloud/ocs-mcp-plugin",
+    "keywords": ["optidata", "mcp", "cloud", "infrastructure", "iaas", "provisioning", "skills"],
+    "skills": "./skills/",
+    "mcp": "./.mcp.json"
+}

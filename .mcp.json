@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "ocs": {
+            "type": "http",
+            "url": "${OCS_MCP_URL:-https://console.optidata.com/api/v1/mcp}",
+            "headers": {
+                "x-api-key": "${user_config.ocs_api_key}"
+            }
+        }
+    }
+}
