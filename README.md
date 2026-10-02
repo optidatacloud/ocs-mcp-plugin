@@ -15,7 +15,7 @@ Claude Code then asks for your **Optidata Cloud API key** (it starts with `ocs_`
 create one in the portal under your account's API keys). That is the only thing you
 configure — the server URL already ships in the plugin.
 
-Full walkthrough, other clients (Codex, Cursor, Gemini CLI) and troubleshooting:
+Full walkthrough, other clients and troubleshooting:
 [`SETUP.md`](SETUP.md).
 
 ## What it covers
@@ -23,8 +23,11 @@ Full walkthrough, other clients (Codex, Cursor, Gemini CLI) and troubleshooting:
 | Area | Examples |
 | --- | --- |
 | Compute | list, create, resize, start/stop/reboot, reinstall, delete instances |
+| Snapshots & SSH keys | snapshot an instance, manage the keys it boots with |
 | Block storage | volumes: list, create, attach/detach, resize, delete |
 | Networking | networks, subnets, VPCs, peerings, interfaces, public IPs, floating IPs |
+| Databases | managed engines: create, resize, restore, suspend, public endpoint, backups, metrics |
+| Kubernetes | clusters, node pools, addons |
 | Object storage | buckets: list, create, delete; list objects and read object metadata |
 | DNS | zones and record sets, reverse DNS |
 | Load balancers | balancers, listeners, backend members |
@@ -39,7 +42,7 @@ not an id you had to look up first.
 
 There is no server in this repository and nothing to install: no Node, no package,
 no local process. The MCP server is hosted and runs inside the Optidata Cloud API
-itself, so every client — Claude Code, Codex, Cursor, Gemini CLI — talks to the same
+itself, so every client — Claude Code, Codex, Cursor — talks to the same
 endpoint. This repo carries the manifests and the skill that teach your client how to
 use it. See [`ARCHITECTURE.md`](ARCHITECTURE.md).
 
@@ -67,7 +70,7 @@ living inside your own resources is never treated as an instruction.
 ## Requirements
 
 - An Optidata Cloud account and an API key from the portal.
-- An MCP client that speaks Streamable HTTP (Claude Code, Codex, Cursor, Gemini CLI).
+- An MCP client that speaks Streamable HTTP (Claude Code, Codex, Cursor).
 
 ## Links
 
@@ -75,6 +78,7 @@ living inside your own resources is never treated as an instruction.
 - [`ARCHITECTURE.md`](ARCHITECTURE.md) — how the hosted design works
 - [`CHANGELOG.md`](CHANGELOG.md) — what changed between versions
 - [Optidata Cloud portal](https://console.optidata.com)
+- [Privacy Policy](https://www.optidata.com/policies) — how Optidata Cloud handles your data
 
 ## License
 

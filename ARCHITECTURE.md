@@ -2,7 +2,7 @@
 
 **There is no server in this repository.** The Optidata Cloud MCP server is hosted:
 it runs inside the Optidata Cloud API itself, and every client — Claude Code, Codex,
-Cursor, Gemini CLI — talks to the same endpoint over HTTP:
+Cursor — talks to the same endpoint over HTTP:
 
 ```
 POST https://console.optidata.com/api/v1/mcp
@@ -14,7 +14,7 @@ skill. It ships no code, no bundle and no tool snapshot.
 ```
 ┌───────────────────────────────────────────────────────────────────────┐
 │  Clients                                                              │
-│  Claude Code · Codex · Cursor · Gemini CLI · VS Code                  │
+│  Claude Code · Codex · Cursor · VS Code                               │
 │  each reads a manifest from THIS repo → all point at the same URL     │
 └──────────────────────────────┬────────────────────────────────────────┘
                                │  POST /api/v1/mcp   (x-api-key)
@@ -103,7 +103,6 @@ not the only copy of the rules, and it is not where server behaviour is defined.
 | `.claude-plugin/plugin.json` | Claude Code plugin identity, version, `userConfig` (the API key) |
 | `.claude-plugin/marketplace.json` | the git marketplace entry |
 | `server.json` | MCP registry entry (remotes) |
-| `gemini-extension.json` | Gemini CLI |
 | `.cursor-plugin/plugin.json` | Cursor |
 | `skills/` | Claude Code skill |
 

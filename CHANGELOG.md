@@ -5,6 +5,49 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-10-02
+
+### Fixed
+
+- Same failure as 1.0.1, in a new place: the skill told the model that **backups and
+  metrics do not exist**. They do — as database backups (`backup_*`) and database
+  metrics (`metrics_get_general_metrics`) — so a model reading the skill refused work
+  the server can do. The section now says what is actually missing (invoices, wallet,
+  payments, **VM** backups and **VM** monitoring) instead.
+- The name-resolution table pointed at `network_list_company_networks` and
+  `network_create_network`, which no longer exist after the VPC/Subnet rename. The
+  addressing layer named "network" is not a provider object and is not created
+  directly; the tools are `vpc_*` and `subnet_*`.
+- The billable list named 8 tools; there are **20**. Missing from it were
+  `block_storage_attach_volume`, `vpc_create_vpc`, `subnet_create_subnet`, the five
+  database ones and the four Kubernetes ones — a gate the model did not expect is a
+  gate it reports as an error.
+- "120+ tools" → ~190.
+
+- The Gemini CLI manifest is gone. It was the one surface that read the key from an
+  `OCS_API_KEY` environment variable — every other manifest has the host collect it
+  from the user — and the plugin directory holds that pattern for review. Gemini CLI
+  is not a target; a client with no manifest here is still configured by hand.
+
+### Added to the skill
+
+- **§7 Databases**: the offering catalog (disk offerings nested in the offering, not
+  a separate list), `estimate_database_cost` as the read-only quote, the required
+  fields of `database_create`, replicas counted *beside* the primary (nodes =
+  replicas + 1; MySQL and MongoDB even-only), `wait_for_database_state` for the async
+  create, the destructive set (`database_actions_suspend` stops the database), and
+  that credentials are permanently denied to MCP — portal only.
+- `database_actions_attach_public_ip` requires `ip_source_ranges`: opening a database
+  to `0.0.0.0/0` must be the customer's stated choice, never a default.
+- **Billable does not always mean quoted.** Only 5 of the 20 billable tools have a
+  server-side estimator; the rest run the gate and return `price_not_quoted`. The
+  skill now says to report that plainly instead of inventing a figure.
+- Kubernetes is named as exposed-but-not-yet-covered, so the model stops treating its
+  absence from this skill as absence from the server.
+
+As in 1.0.1, the tools themselves were already live — this release only fixes what
+the plugin tells the model about them.
+
 ## [1.0.1] - 2026-07-30
 
 ### Fixed

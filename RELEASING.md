@@ -22,7 +22,7 @@ Release this repo only when the **packaging** changes: the URL, a header, a
 ## Flow
 
 1. Edit what changed — `.mcp.json`, `.claude-plugin/plugin.json`, `server.json`,
-   `gemini-extension.json`, `.cursor-plugin/plugin.json`, `skills/**` or a doc.
+   `.cursor-plugin/plugin.json`, `skills/**` or a doc.
 2. Bump `version` in `.claude-plugin/plugin.json` by hand.
 3. Add a `CHANGELOG.md` entry for that version.
 4. Commit, tag `vX.Y.Z`, push:
@@ -32,8 +32,8 @@ git tag vX.Y.Z
 git push --follow-tags
 ```
 
-Three other manifests carry their own `version` field and must move with it:
-`server.json`, `gemini-extension.json` and `.cursor-plugin/plugin.json`. Only
+Two other manifests carry their own `version` field and must move with it:
+`server.json` and `.cursor-plugin/plugin.json`. Only
 `marketplace.json` intentionally has none — `plugin.json` is the source of truth
 and the one Claude Code reads.
 

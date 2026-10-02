@@ -81,9 +81,11 @@ http_headers = { "x-api-key" = "ocs_..." }
 ### Other MCP clients
 
 Any client that speaks **Streamable HTTP** connects the same way: point it at the
-URL and send `x-api-key`. That covers Cursor and Gemini CLI, which have their own
-manifests in this repo — the Gemini one reads the key from the `OCS_API_KEY`
-environment variable, so export it before starting the CLI.
+URL and send `x-api-key`. Cursor has its own manifest in this repo. A client with no
+manifest here is configured by hand: the URL above, plus the key in the header.
+
+The key is never read from the environment: every manifest in this repo asks the host
+to collect it from the user and hand it over.
 
 `mcp-remote` is **not** required and is not part of the recommended setup. It is
 only a fallback for a client that can speak *stdio and nothing else*: in that
