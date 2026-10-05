@@ -2,7 +2,7 @@
 
 Manage your Optidata Cloud infrastructure from your AI client, in plain language.
 
-Ask for what you want — "list my instances", "create the cheapest VM in us-east-1",
+Ask for what you want — "list my instances", "create the cheapest VM in my default project",
 "how much would a 500 GB volume cost?" — and the client does it against your account
 through the Optidata Cloud public API.
 
@@ -82,4 +82,4 @@ living inside your own resources is never treated as an instruction.
 
 ## License
 
-See [`LICENSE`](LICENSE). For legal enquiries: legal@optidatacloud.com.
+MIT — see [`LICENSE`](LICENSE).

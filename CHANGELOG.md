@@ -5,6 +5,19 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2026-10-05
+
+### Changed
+
+- Licensed under MIT, replacing the all-rights-reserved notice. The plugin directory
+  requires a license before it lists a plugin; `plugin.json` now declares it too.
+- `.mcp.json` points at `https://console.optidata.com/api/v1/mcp` directly. The
+  `${OCS_MCP_URL:-…}` fallback is gone: the directory accepts only an absolute
+  `https://` URL (or a `user_config` reference) as a remote server's `url`, so the
+  environment override blocked submission. Production users see no difference; to
+  test another environment, add the server by hand with `claude mcp add`.
+- README and SETUP examples no longer name a location code.
+
 ## [1.1.0] - 2026-10-02
 
 ### Fixed

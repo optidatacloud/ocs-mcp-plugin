@@ -3,7 +3,7 @@
     "name": "cloud.optidata/ocs-mcp-server",
     "title": "Optidata Cloud MCP Server",
     "description": "Query and provision Optidata Cloud compute, network, storage, DNS, projects and catalog.",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "websiteUrl": "https://github.com/optidatacloud/ocs-mcp-plugin",
     "repository": {
         "url": "https://github.com/optidatacloud/ocs-mcp-plugin",
