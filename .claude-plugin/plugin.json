@@ -2,11 +2,12 @@
     "name": "optidata-cloud",
     "displayName": "Optidata Cloud",
     "description": "Connect to the hosted Optidata Cloud MCP server: query and provision compute, network, storage, DNS, projects and catalog through the Optidata Cloud public API (/api/v1). Nothing runs locally — the plugin points at the server and authenticates with your portal API key. Resolves resources by name, previews itemized cost before any billable create, and requires two-step confirmation for destructive actions.",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "author": {
         "name": "Optidata Cloud"
     },
     "homepage": "https://github.com/optidatacloud/ocs-mcp-plugin",
+    "license": "MIT",
     "repository": "https://github.com/optidatacloud/ocs-mcp-plugin",
     "privacyPolicyUrl": "https://www.optidata.com/policies",
     "keywords": ["mcp", "optidata", "cloud", "infrastructure", "iaas", "provisioning"],

@@ -36,7 +36,7 @@ Run `/mcp` to confirm the `ocs` server (from the **optidata-cloud** plugin) is
 connected, then ask:
 
 - "list my instances"
-- "create the cheapest VM in us-east-1"
+- "create the cheapest VM in my default project"
 - "show my DNS zones"
 
 If it does not appear in `/mcp` at all, run `/plugin manage` and check the plugin
@@ -56,9 +56,6 @@ claude mcp add --transport http ocs \
 
 You then get the tools but not the skill (the provisioning house style), which
 only the plugin carries.
-
-To point a different environment (staging), export `OCS_MCP_URL` before starting
-the client; the plugin falls back to production when it is unset.
 
 ### Codex
 
